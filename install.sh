@@ -1,20 +1,17 @@
 #! /bin/bash
 
-
-
 # install electron19
 
 dir_electron19=/opt/electron19
+wget https://github.com/electron/electron/releases/download/v19.1.9/electron-v19.1.9-linux-x64.zip
 
 if [ ! -d $dir_electron19 ]; then
-sudo mkdir -p $dir_electron19
-sudo unzip electron-v19.1.9-linux-x64.zip -d $dir_electron19
-sudo ln -s $dir_electron19/electron /usr/local/bin/electron19
+    sudo mkdir -p $dir_electron19
+    sudo unzip electron-v19.1.9-linux-x64.zip -d $dir_electron19
+    sudo ln -s $dir_electron19/electron /usr/local/bin/electron19
 fi
 
-
 # install wechat-uos
-
 
 pkgname=wechat-uos
 _pkgname=wechat
@@ -23,12 +20,13 @@ pkgver=2.1.5
 
 pkgdir=wechat-uos
 
-ar -x com.tencent.weixin_2.1.5_amd64.deb
+wget https://home-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.weixin/com.tencent.weixin_2.1.5_amd64.deb
 
+ar -x com.tencent.weixin_2.1.5_amd64.deb
 
 echo "  -> Extracting the data.tar.xz..."
 if [ -d $pkgdir ]; then
-rm -rf $pkgdir
+    rm -rf $pkgdir
 fi
 mkdir $pkgdir
 tar -Jxvf data.tar.xz -C "${pkgdir}"
