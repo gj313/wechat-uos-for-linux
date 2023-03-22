@@ -8,7 +8,7 @@ wechat-uos for linux
 
 
 ````bash
-git clone https://github.com/gj313/wechat-uos-for-opensuse-tumbleweed.git
+git clone https://github.com/gj313/wechat-uos-for-linux.git
 
 cd wechat-uos-for-opensuse-tumbleweed
 
